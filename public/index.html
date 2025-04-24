@@ -80,25 +80,31 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-        ctx.font = '28px IranSans';
+        ctx.font = '20px IranSans';
         ctx.fillStyle = 'black';
 
         const now = new Date();
         const date = now.toLocaleDateString('fa-IR');
         const time = now.toLocaleTimeString('fa-IR', { hour: '2-digit', minute: '2-digit' });
 
-        ctx.fillText(`تاریخ: ${date} | ساعت: ${time} | پیگیری: ${trackingCode}`, 100, 300);
-        ctx.fillText(`مبلغ: ${amount} ریال`, 100, 360);
-        ctx.fillText(`مبدا: ${formatCardNumber(cardFrom)}`, 100, 420);
-        ctx.fillText(`مقصد: ${formatCardNumber(cardTo)}`, 100, 480);
+        ctx.font = '16px IranSans';
+        ctx.fillText(`تاریخ: ${date} | ساعت: ${time} | پیگیری: ${trackingCode}`, 580, 550);
+        ctx.fillText(`مبلغ: ${amount} ریال`, 580, 600);
 
-        ctx.font = 'bold 30px IranSans';
+        ctx.font = '20px IranSans';
+        ctx.fillText(`مبدا: ${formatCardNumber(cardFrom)}`, 580, 650);
+        
+        ctx.font = '20px IranSans';
+        ctx.fillText(`مقصد: ${formatCardNumber(cardTo)}`, 580, 700);
+
+        ctx.font = '32px IranSans';
         const bankName = Math.random() < 0.5 ? 'پست بانک' : 'بانک مهر';
-        ctx.fillText(bankName, 100, 150);
-        ctx.font = '24px IranSans';
-        ctx.fillText('ورامین جدید', 100, 190);
-        ctx.fillText('خدمات سحاب - رسید انتقال وجه', 100, 230);
+        ctx.fillText(bankName, 450, 750);
+        ctx.font = '22px IranSans';
+        ctx.fillText('ورامین جدید', 450, 800);
+        ctx.fillText('خدمات سحاب - رسید انتقال وجه', 586, 900);
       };
+
     });
   </script>
 </body>
